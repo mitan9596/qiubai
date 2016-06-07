@@ -10,7 +10,12 @@ class qiubai:
 
     def __init__(self):
         print('欢迎进入糗事百科爬取界面')
-        self.baseUrl = 'http://www.qiushibaike.com/8hr/page/'
+        self.baseUrl = 'http://www.qiushibaike.com/'
+        time = input('是否爬取最新8小时糗百段子(Y/n):')
+        if time == 'n':
+            self.hotTime = 'hot/page/'
+        else:
+            self.hotTime = '8hr/page/'
         self.pageNum = 1
         self.user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36'
         self.headers = {"User-Agent": self.user_agent}
