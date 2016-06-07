@@ -24,7 +24,7 @@ class qiubai:
 
     def getPage(self):
         try:
-            url = self.baseUrl + str(self.pageNum)
+            url = self.baseUrl + self.hotTime + str(self.pageNum)
             request = urllib.request.Request(url, headers=self.headers)
             response = urllib.request.urlopen(request)
             pageCode = response.read().decode('utf-8')
